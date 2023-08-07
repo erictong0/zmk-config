@@ -77,8 +77,8 @@
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |||||     |     |     |     |     |     |
 // |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     | BT1 | BT2 | BT3 | BT4 | BT5 |
-//                   |     |     |     |||||     |     |     |
+// |     |     |     |     |     |     |||||     | Left | Down | Right | Up | BT5 |
+//                   |     |     |     |||||     |Copy (CTRL(C))|Paste (CTRL(V))|
                         bindings = <
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
