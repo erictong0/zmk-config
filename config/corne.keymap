@@ -75,55 +75,55 @@
 
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     | Left | Down | Right | Up | BT5 |
+// |     |     |     |     |     |     |||||     | Word left |     |     |     |End|
+// |     |     |     |tab left|tab right|     |||||     | Left | Down | Right | Up |Home|
+// |     |     |     |     |     |     |||||     | Highlight word left |     |     |     |     |
 //                   |     |     |     |||||     |Copy (CTRL(C))|Paste (CTRL(V))|
                         bindings = <
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                      &trans &trans &trans   &trans &trans &trans
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kpvLC(DOWN) &kp LC(RIGHT) &kp LC(UP) &kp END
+ &trans &trans &trans &kp LC(PG_UP) &kp LC(PG_DN)   &trans   &trans &kp LEFT &kp DOWN &kp RIGHT &kp UP &kp HOME
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(RIGHT)) &kp LC(LS(UP)) &trans
+                      &trans &trans &trans          &kp LC(T) &kp LC(C) &kp LC(V)
                         >;
                 };
 
                 sym_layer {
 // -----------------------------------------------------------------------------------------
+// |     |     |     |  =  |  +  |     |||||     |     |     |     |     |     |
+// |     |     |  `  |  _  |  -  |     |||||     |     |     |     |     |     |
 // |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     | BT1 | BT2 | BT3 | BT4 | BT5 |
-//                   |     |     |     |||||     |     |     |
+//                   |     |  (  |  )  |||||     |     |     |
                         bindings = <
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                      &trans &trans &trans   &trans &trans &trans
+ &trans &trans &trans &kp EQUAL &kp PLUS &trans       &trans &trans &trans &trans &trans &trans
+ &trans &trans &kp GRAVE &kp UNDER &kp MINUS &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &trans
+                  &trans &kp LPAR &kp RPAR            &trans &trans &trans
                         >;
                 };
 
                 num_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     | BT1 | BT2 | BT3 | BT4 | BT5 |
-//                   |     |     |     |||||     |     |     |
+// |     |  7  |  8  |  9  |     |     |||||     |     |  &  |  *  |  \  |     |
+// |     |  4  |  5  |  6  |     |     |||||     |     |  $  |  %  |  ^  |     |
+// |     |  1  |  2  |  3  |     |     |||||     |     |  !  |  @  |  #  |     |
+//                   |     |  0  |     |||||     |     |     |
                         bindings = <
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                      &trans &trans &trans   &trans &trans &trans
+ &trans &kp N7 &kp N8 &kp N9 &trans &trans   &trans &kp AMPS &kp ASTRK &kp BSLH &trans &trans
+ &trans &kp N4 &kp N5 &kp N6 &trans &trans   &trans &kp DOLLAR &kp PERCENT &kp CARET &trans &trans
+ &trans &kp N1 &kp N2 &kp N3 &trans &trans   &trans &kp EXCL &kp AT &kp HASH &trans &trans
+                      &trans &kp N0 &trans   &trans &trans &trans
                         >;
                 };
 
                 func_layer {
 // -----------------------------------------------------------------------------------------
+// |     |     |     |   |     |     |||||     |     |     |     |     |     |
+// |     |     | F5 |     |     |     |||||     |     |     |     |     |     |
 // |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     |     |     |     |     |     |
-// |     |     |     |     |     |     |||||     | BT1 | BT2 | BT3 | BT4 | BT5 |
 //                   |     |     |     |||||     |     |     |
                         bindings = <
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &kp F5 &trans &trans &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
                       &trans &trans &trans   &trans &trans &trans
                         >;
