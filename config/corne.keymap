@@ -34,12 +34,12 @@
     };
 
     behaviors {
-        td0: tap_dance_0 {
+        CTRLTAB: Control_Tab {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
+            label = "Control_Tab";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp LCTRL>, <&kp LA(TAB)>, <&kp N3>;
         };
     };
 
