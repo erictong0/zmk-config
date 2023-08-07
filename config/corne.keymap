@@ -34,7 +34,7 @@
     };
 
     behaviors {
-        CTRLTAB: Control_Tab {
+        tdCTRLTAB: Control_Tab {
             compatible = "zmk,behavior-tap-dance";
             label = "Control_Tab";
             #binding-cells = <0>;
