@@ -80,7 +80,7 @@
 // |     |     |     |     |     |     |||||     | Highlight word left |     |     |     |     |
 //                   |     |     |     |||||     |Copy (CTRL(C))|Paste (CTRL(V))|
                         bindings = <
- &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kpvLC(DOWN) &kp LC(RIGHT) &kp LC(UP) &kp END
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kp LC(DOWN) &kp LC(RIGHT) &kp LC(UP) &kp END
  &trans &trans &trans &kp LC(PG_UP) &kp LC(PG_DN)   &trans   &trans &kp LEFT &kp DOWN &kp RIGHT &kp UP &kp HOME
  &trans &trans &trans &trans &trans &trans          &trans &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(RIGHT)) &kp LC(LS(UP)) &trans
                       &trans &trans &trans          &kp LC(T) &kp LC(C) &kp LC(V)
