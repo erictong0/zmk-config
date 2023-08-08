@@ -39,7 +39,14 @@
             label = "Control_Tab";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&kp LA(TAB)>, <&kp N3>;
+            bindings = <&kp LCTRL>, <&kp LA(TAB)>;
+        };
+        tdCLMK_TAB: Colemak_Tab{
+            compatible = "zmk,behavior-tap-dance";
+            label = "Colemak_Tab";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&tdCTRLTAB>, <&to CLMK>;
         };
     };
 
@@ -51,13 +58,13 @@ label = "DEF";
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | LGUI |
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | CLMK  |
 //  |ESC/Media|BSPC/Nav|LCTRL/switch tab|   | ENT/Sym | SPACE/Num | DEL/Func |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LGUI
    &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to CLMK
-      &lt MEDIA ESC &lt NAV BSPC &tdCTRLTAB   &lt SYM RET &lt NUM SPACE &lt FUNC DEL
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &tdCLMK_TAB
+      &lt MEDIA ESC &lt NAV SPACE &kp BSPC   &lt SYM RET &lt NUM SPACE &lt FUNC DEL
                         >;
                 };
             media_layer {
