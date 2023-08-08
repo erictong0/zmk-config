@@ -46,7 +46,7 @@
             label = "Colemak_Tab";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&tdCTRLTAB>, <&to CLMK>;
+            bindings = <&kp LA(TAB)>, <&to CLMK>;
         };
     };
 
