@@ -79,13 +79,13 @@ label = "MEDIA";
 label = "NAV";
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |||||     | Word left |     |     |     |End|
-// |     |     |     |tab left|tab right|     |||||     | Left | Down | Right | Up |Home|
+// |     |     |     |tab left|tab right|     |||||     | Left | Down | Up | Right |Home|
 // |     |     |     |     |     |     |||||     | Highlight word left |     |     |     |     |
 //                   |     |     |     |||||     |Copy (CTRL(C))|Paste (CTRL(V))|
                         bindings = <
- &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kp LC(DOWN) &kp LC(RIGHT) &kp LC(UP) &kp END
- &trans &trans &trans &kp LC(PG_UP) &kp LC(PG_DN)   &trans   &trans &kp LEFT &kp DOWN &kp RIGHT &kp UP &kp HOME
- &trans &trans &trans &trans &trans &trans          &trans &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(RIGHT)) &kp LC(LS(UP)) &trans
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT) &kp END
+ &trans &trans &trans &kp LC(PG_UP) &kp LC(PG_DN)   &trans   &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(UP)) &kp LC(LS(RIGHT)) &trans
                       &trans &trans &trans          &kp LC(T) &kp LC(C) &kp LC(V)
                         >;
                 };
