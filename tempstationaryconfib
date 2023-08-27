@@ -1,0 +1,168 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define MEDIA   1
+#define NAV     2
+#define SYM     3
+#define NUM     4
+#define FUNC    5
+#define CLMK   6
+
+
+/ {
+    macros {
+        snip_tool: snip_tool {
+            label = "snip_tool";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+    behaviors {
+        tdCTRLTAB: Control_Tab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Control_Tab";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LCTRL>, <&kp LA(TAB)>;
+        };
+        tdCLMK_TAB: Colemak_Tab{
+            compatible = "zmk,behavior-tap-dance";
+            label = "Colemak_Tab";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LA(TAB)>, <&to CLMK>;
+        };
+    };
+
+    keymap {
+            compatible = "zmk,keymap";
+
+            default_layer {
+label = "DEF";
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | LGUI |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | CLMK  |
+//  |ESC/Media|BSPC/Nav|BSCP/switch tab|   | ENT/Sym | SPACE/Num | DEL/Func |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LGUI
+   &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &tdCLMK_TAB
+      &lt MEDIA ESC &lt NAV SPACE &kp BSPC   &lt SYM RET &lt NUM SPACE &lt FUNC DEL
+                        >;
+                };
+            media_layer {
+label = "MEDIA";
+// -----------------------------------------------------------------------------------------
+// |Clear|     |     |     |     |     |||||     |     |     |     |     |     |
+// |     |     |     |     |     |     |||||     | Play/Pause | VOL_DN | VOL_UP |Mute|     |
+// |     |     |     |     |     |     ||||| BT1 | BT2 | BT3 | BT4 | BT5 |     |
+//                   |     |     |     |||||     | Play/Pause |     |
+                        bindings = <
+ &bt BT_CLR &trans &trans &kp UP &trans &trans   &trans &trans &trans &trans &trans &trans
+ &out OUT_TOG &trans &kp LEFT &kp DOWN &kp RIGHT &trans   &trans &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE  &trans
+ &trans &trans &trans &trans &trans &trans   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+                      &trans &trans &trans   &trans &kp C_PP &trans
+                        >;
+                };
+
+                nav_layer {
+label = "NAV";
+// -----------------------------------------------------------------------------------------
+// |     |     |     |     |     |     |||||     | Word left |     |     |     |End|
+// |     |     |     |tab left|tab right|     |||||     | Left | Down | Up | Right |Home|
+// |     |     |     |     |     |     |||||     | Highlight word left |     |     |     |     |
+//                   |     |     |     |||||     |Copy (CTRL(C))|Paste (CTRL(V))|
+                        bindings = <
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT) &kp END
+ &trans &trans &trans &kp LC(PG_UP) &kp LC(PG_DN)   &trans   &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME
+ &trans &trans &trans &trans &trans &trans          &trans &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(UP)) &kp LC(LS(RIGHT)) &trans
+                      &trans &trans &trans          &kp LC(T) &kp LC(C) &kp LC(V)
+                        >;
+                };
+
+                sym_layer {
+label = "SYMBOL";
+// -----------------------------------------------------------------------------------------
+// |     |     |     |  =  |  +  |     |||||     |     |     |     |     |     |
+// |     |     |  `  |  _  |  -  |     |||||     |     |     |     |     |     |
+// |     |     |     |     |     |     |||||     |     |     |     |     |     |
+//                   |     |  (  |  )  |||||     |     |     |
+                        bindings = <
+ &trans &trans &trans &kp EQUAL &kp PLUS &trans       &trans &trans &trans &trans &trans &trans
+ &trans &trans &kp GRAVE &kp UNDER &kp MINUS &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &trans
+                  &trans &kp LPAR &kp RPAR            &trans &trans &trans
+                        >;
+                };
+
+                num_layer {
+label = "NUM";
+// -----------------------------------------------------------------------------------------
+// |     |     |  7  |  8  |  9  |     |||||     |     |  &  |  *  |  \  |     |
+// |     |     |  4  |  5  |  6  |     |||||     |     |  $  |  %  |  ^  |     |
+// |     |     |  1  |  2  |  3  |     |||||     |     |  !  |  @  |  #  |     |
+//                   |     |  0  |     |||||     |     |     |
+                        bindings = <
+ &trans &trans &kp N7 &kp N8 &kp N9 &trans   &trans &kp AMPS &kp ASTRK &kp BSLH &trans &trans
+ &trans &trans &kp N4 &kp N5 &kp N6 &trans   &trans &kp DOLLAR &kp PERCENT &kp CARET &trans &trans
+ &trans &trans &kp N1 &kp N2 &kp N3 &trans   &trans &kp EXCL &kp AT &kp HASH &trans &trans
+                      &trans &kp N0 &trans   &trans &trans &trans
+                        >;
+                };
+
+                func_layer {
+label = "FUNC";
+// -----------------------------------------------------------------------------------------
+// |     |     |     |   |     |     |||||     |     |     |     |     |     |
+// |     |     | F5 |     |     |     |||||     |     |     |     |     |     |
+// |     |     |     |     |     |     |||||     |     |     |     |     |     |
+//                   |     |     |     |||||     |     |     |
+                        bindings = <
+ &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &kp F5 &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                      &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
+
+                clmk_layer {
+label = "CLMK";
+// -----------------------------------------------------------------------------------------
+// |     |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |     |
+// |     |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  |     |
+// |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
+//                   |     |     |     |   |     |     |     |
+                        bindings = <
+   &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U &kp Y &kp SEMI &trans
+   &trans &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E &kp I &kp O &trans
+   &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &to DEFAULT
+                   &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
+        };
+};
