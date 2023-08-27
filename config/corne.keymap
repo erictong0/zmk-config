@@ -20,18 +20,7 @@
 
 / {
     macros {
-        snip_tool: snip_tool {
-            label = "snip_tool";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_press &kp LSHIFT>
-                , <&macro_tap &kp S>
-                , <&macro_release &kp LSHIFT>
-                , <&macro_release &kp LGUI>
-                ;
-        };
+        
     };
     combos {
         compatible = "zmk,combos";
@@ -62,6 +51,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp LA(TAB)>, <&to CLMK>;
         };
+        td_mytd: tap_dance_my {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MY;
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings =
+            <&mt LSHFT SPACE>,
+            <&mo 2>;
+        };
     };
 
     keymap {
@@ -72,15 +70,30 @@ label = "DEF";
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | LGUI |
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | CLMK  |
+// | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | NUM  |
 //  |ESC/Media|BSPC/Nav|BSCP/switch tab|   | ENT/Sym | SPACE/Num | DEL/Func |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LGUI
+   &mo SYM &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LGUI
    &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &tdCLMK_TAB
-      &lt MEDIA ESC &lt NAV SPACE &kp BSPC   &lt SYM RET &lt NUM SPACE &lt FUNC DEL
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo NUM
+      &to LAYER ESC &lt NAV SPACE &kp BSPC   &kp RET &lt NUM SPACE &to LAYER
                         >;
                 };
+                layer_layer {
+label = "LAYER";
+// -----------------------------------------------------------------------------------------
+// |     |     |     |     |Ctrl/Shift/Alt keyboard|     |||||     |     |     |     |     |     |
+// |     |     |     | SYM | NUM |     |||||     |     |     |     |     |     |
+// |     |     |     |     |     |     |||||     |     |     |     |     |CLMK|
+//                   |     |     |     |||||     |     |     |
+                        bindings = <
+ &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &trans &to SYM &to NUM &trans   &trans &trans &trans &trans &trans &trans
+ &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                      &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
+                        >;
+                };
+
             media_layer {
 label = "MEDIA";
 // -----------------------------------------------------------------------------------------
@@ -107,7 +120,7 @@ label = "NAV";
  &trans &trans &trans &trans &trans &trans          &trans &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT) &kp END
  &trans &trans &trans &kp LC(PG_UP) &kp LC(PG_DN)   &trans   &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME
  &trans &trans &trans &trans &trans &trans          &trans &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(UP)) &kp LC(LS(RIGHT)) &trans
-                      &trans &trans &trans          &kp LC(T) &kp LC(C) &kp LC(V)
+                      &to DEFAULT &trans &trans          &trans &trans &to DEFAULT
                         >;
                 };
 
@@ -122,7 +135,7 @@ label = "SYMBOL";
  &trans &trans &trans &kp EQUAL &kp PLUS &trans       &trans &trans &trans &trans &trans &trans
  &trans &trans &kp GRAVE &kp UNDER &kp MINUS &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &trans
-                  &trans &kp LPAR &kp RPAR            &trans &trans &trans
+                  &to DEFAULT &kp LPAR &kp RPAR            &trans &trans &to DEFAULT
                         >;
                 };
 
@@ -131,13 +144,13 @@ label = "NUM";
 // -----------------------------------------------------------------------------------------
 // |     |     |  7  |  8  |  9  |     |||||     |     |  &  |  *  |  \  |     |
 // |     |     |  4  |  5  |  6  |     |||||     |     |  $  |  %  |  ^  |     |
-// |     |     |  1  |  2  |  3  |     |||||     |     |  !  |  @  |  #  |     |
+// |SYM|     |  1  |  2  |  3  |     |||||     |     |  !  |  @  |  #  |     |
 //                   |     |  0  |     |||||     |     |     |
                         bindings = <
  &trans &trans &kp N7 &kp N8 &kp N9 &trans   &trans &kp AMPS &kp ASTRK &kp BSLH &trans &trans
  &trans &trans &kp N4 &kp N5 &kp N6 &trans   &trans &kp DOLLAR &kp PERCENT &kp CARET &trans &trans
- &trans &trans &kp N1 &kp N2 &kp N3 &trans   &trans &kp EXCL &kp AT &kp HASH &trans &trans
-                      &trans &kp N0 &trans   &trans &trans &trans
+ &mo SYM &trans &kp N1 &kp N2 &kp N3 &trans   &trans &kp EXCL &kp AT &kp HASH &trans &trans
+                      &to DEFAULT &kp N0 &trans   &trans &trans &to DEFAULT
                         >;
                 };
 
@@ -150,11 +163,27 @@ label = "FUNC";
 //                   |     |     |     |||||     |     |     |
                         bindings = <
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
- &trans &trans &kp F5 &trans &trans &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                      &trans &trans &trans   &trans &trans &trans
+ &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                      &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
                         >;
                 };
+                ctrl_layer {
+
+label = "CTRL";
+// -----------------------------------------------------------------------------------------
+// |     |Screenshot|Ctrl W|undo?|redo|new tab   |||||Redo |Home     | Up |  End  |     |     |
+// |Shift|Select all|Save|left tab|right tab|find|||||     |Ctrl Left|Down|Ctrl Right|     |     |
+// |     |Undo|Cut|Copy|Paste|windows paste      |||||     |     |     |     |     |     |
+//                               |Esc|     |     |||||     |shift|     |
+                        bindings = <
+ &trans &kp LG(LS(S)) &kp LC(W) &kp LC(Z) &kp LC(Y) &kp LC(T)   &kp LC(Y) &kp HOME &kp UP &kp END &trans &trans
+ &kp LSHFT &LC(A) &LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &trans &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
+ &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(LC(V))   &trans &trans &trans &trans &trans &trans
+                      &to DEFAULT &trans &trans   &trans &kp LSHFT &to DEFAULT
+                        >;
+                };
+
 
                 clmk_layer {
 label = "CLMK";
@@ -167,7 +196,7 @@ label = "CLMK";
    &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U &kp Y &kp SEMI &trans
    &trans &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E &kp I &kp O &trans
    &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &to DEFAULT
-                   &trans &trans &trans   &trans &trans &trans
+                   &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
                         >;
                 };
         };
