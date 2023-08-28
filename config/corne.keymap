@@ -14,9 +14,10 @@
 #define MEDIA   2
 #define SYM     3
 #define NUM     4
-#define CTRL    5
+#define FUNC    5
 #define SPEC   6
-#define CLMK   7
+#define CTRL    7
+#define CLMK   8
 
 
 
@@ -73,7 +74,7 @@ label = "DEF";
    &mo SYM &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &mt LCTRL LGUI
    &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mt LALT SQT
    &to CTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo NUM
-      &to LAYER ESC &lt NAV SPACE &kp BSPC   &kp RET &lt NUM SPACE &to LAYER
+      &to LAYER &lt NAV SPACE &kp BSPC   &kp RET &lt NUM SPACE &to LAYER
                         >;
                 };
                 layer_layer {
