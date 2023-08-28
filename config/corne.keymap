@@ -102,7 +102,7 @@ label = "MEDIA";
                         bindings = <
  &bt BT_CLR &trans &trans &kp UP &trans &trans   &trans &trans &trans &trans &trans &trans
  &out OUT_TOG  &kp LC(LS(8)) &kp LC(LA(M)) &trans &trans &trans   &trans &trans &kp C_VOL_DN &kp C_VOL_UP &trans  &trans
- &trans &trans &LC(LS(7)) &trans &trans &trans   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+ &trans &trans &kp LC(LS(7)) &trans &trans &trans   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
                       &to DEFAULT &trans &trans   &trans &kp C_PP &to DEFAULT
                         >;
                 };
@@ -180,7 +180,7 @@ label = "CTRL";
 //                               |Esc|     |     |||||     |shift|     |
                         bindings = <
  &trans &kp LG(LS(S)) &kp LC(W) &kp LC(Z) &kp LC(Y) &kp LC(T)   &kp LC(Y) &kp HOME &kp UP &kp END &trans &trans
- &kp LSHFT &LC(A) &LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &trans &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
+ &kp LSHFT &kp LC(A) &kp LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &trans &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
  &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(LC(V))   &trans &trans &trans &trans &trans &trans
                       &to DEFAULT &trans &trans   &trans &kp LSHFT &to DEFAULT
                         >;
