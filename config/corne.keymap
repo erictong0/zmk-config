@@ -87,7 +87,7 @@ label = "LAYER";
                         bindings = <
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &to MEDIA &to SYM &to NUM &trans   &trans &to NUM &to SYM &to MEDIA &trans &trans
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to CLMK
+ &to CTRL &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to CLMK
                       &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
                         >;
                 };
