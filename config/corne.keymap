@@ -71,10 +71,10 @@ label = "DEF";
 // | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | NUM  |
 //  |to Layer|Space|BSCP|   | ENTER | SPACE | to Layer |
                         bindings = <
-   &mo SYM &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &mt LCTRL LGUI
-   &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &to LYR &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &mt LCTRL LGUI
+   &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mo SYM
    &mo CTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo NUM
-      &to LYR &kp SPACE &kp BSPC   &kp RET &kp SPACE &to LYR
+      &kp ESC &kp SPACE &kp BSPC   &kp RET &kp SPACE &mo CTRL
                         >;
                 };
                 layer_layer {
@@ -113,13 +113,13 @@ label = "MEDIA";
 label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
 // |     |     |     |  =  |  +  |     |||||     |     |     |     |     |     |
-// |     |     |  `  |  (  |  )  |  _  |||||     |     |     |     |     |     |
+// |     |     |  `  |  (  |  )  |  _  |||||     |     |     |     | ' |     |
 // |     |     |     |     |     |     |||||     |     |     |     |     |     |
 //                   |     |  (  |  )  |||||     |     |     |
                         bindings = <
- &trans &trans &trans &kp EQUAL &kp PLUS &trans       &trans &trans &trans &trans &trans &trans
- &trans &trans &kp GRAVE &kp LPAR &kp RPAR &kp UNDER   &trans &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &trans
+ &trans &trans &trans &kp LBRC &kp RBRC &trans       &trans &trans &trans &trans &trans &trans
+ &trans &trans &kp GRAVE &kp LBKT &kp RBKT &kp UNDER   &trans &kp UNDER &kp EQUAL &trans &kp APOS &trans
+ &trans &trans &kp LCTRL &kp LALT &kp M &trans            &trans &trans &trans &trans &trans &trans
                   &to DEFAULT &kp LPAR &kp RPAR            &trans &trans &to DEFAULT
                         >;
                 };
