@@ -17,7 +17,7 @@
 #define FUNC    5
 #define SPEC   6
 #define CTRL    7
-#define CLMK   8
+#define QWRT   8
 
 
 
@@ -71,9 +71,9 @@ label = "DEF";
 // | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | NUM  |
 //  |to Layer|Space|BSCP|   | ENTER | SPACE | to Layer |
                         bindings = <
-   &to LYR &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &mt LCTRL LGUI
-   &kp LSHIFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mo SYM
-   &mo CTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo NUM
+   &to LYR &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U &kp Y &kp SEMI&mt LCTRL LGUI
+   &kp LSHIFT &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E &kp I &kp O &mo SYM
+   &mo CTRL &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &mo NUM
       &kp ESC &kp SPACE &kp BSPC   &kp RET &kp SPACE &mo CTRL
                         >;
                 };
@@ -87,7 +87,7 @@ label = "LAYER";
                         bindings = <
  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &to MEDIA &to SYM &to NUM &trans   &trans &to NUM &to SYM &to MEDIA &trans &trans
- &to CTRL &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to CLMK
+ &to CTRL &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to QWRT
                       &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
                         >;
                 };
@@ -188,16 +188,16 @@ label = "CTRL";
 
 
                 clmk_layer {
-label = "CLMK";
+label = "QWRT";
 // -----------------------------------------------------------------------------------------
 // |     |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |     |
 // |     |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  |     |
 // |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-   &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U &kp Y &kp SEMI &trans
-   &trans &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E &kp I &kp O &trans
-   &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &to DEFAULT
+   &trans &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P &trans
+   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
+   &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
                    &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
                         >;
                 };
