@@ -47,7 +47,7 @@
             label = "Colemak_Tab";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LA(TAB)>, <&to CLMK>;
+            bindings = <&kp LA(TAB)>, <&to QWRT>;
         };
 //        td_mytd: tap_dance_my {
 //        compatible = "zmk,behavior-tap-dance";
