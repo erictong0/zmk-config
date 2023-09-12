@@ -118,7 +118,7 @@ label = "SYMBOL";
 //                   |     |  (  |  )  |||||     |     |     |
                         bindings = <
  &trans &kp 8 &trans &kp LBRC &kp RBRC &trans       &trans &trans &trans &trans &trans &trans
- &kp LSHIFT &kp &kp GRAVE &kp LBKT &kp RBKT &kp UNDER   &trans &kp UNDER &kp EQUAL &kp PIPE &kp APOS &trans
+ &kp LSHIFT &kp 7 &kp GRAVE &kp LBKT &kp RBKT &kp UNDER   &trans &kp UNDER &kp EQUAL &kp PIPE &kp APOS &trans
  &kp LCTRL  &kp LALT &kp M &trans &trans &trans            &trans &trans &trans &trans &trans &trans
                   &to DEFAULT &kp LPAR &kp RPAR            &trans &trans &to DEFAULT
                         >;
