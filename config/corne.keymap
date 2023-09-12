@@ -71,7 +71,7 @@ label = "DEF";
 // | CRTL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | NUM  |
 //  |to Layer|Space|BSCP|   | ENTER | SPACE | to Layer |
                         bindings = <
-   &to LYR &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U &kp Y &kp SEMI&mt LCTRL LGUI
+   &sl LYR &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U &kp Y &kp SEMI&mt LCTRL LGUI
    &kp LSHIFT &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E &kp I &kp O &mo SYM
    &mo CTRL &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &mo NUM
       &kp ESC &kp SPACE &kp BSPC   &kp RET &kp SPACE &mo CTRL
@@ -85,7 +85,7 @@ label = "LAYER";
 // |     |     |     |     |     |     |||||     |     |     |     |     |CLMK|
 //                   |     |     |     |||||     |     |     |
                         bindings = <
- &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+ &kp TAB &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
  &trans &trans &to MEDIA &to SYM &to NUM &trans   &trans &to NUM &to SYM &to MEDIA &trans &trans
  &to CTRL &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to QWRT
                       &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
@@ -117,9 +117,9 @@ label = "SYMBOL";
 // |     |     |     |     |     |     |||||     |     |     |     |     |     |
 //                   |     |  (  |  )  |||||     |     |     |
                         bindings = <
- &trans &trans &trans &kp LBRC &kp RBRC &trans       &trans &trans &trans &trans &trans &trans
- &trans &trans &kp GRAVE &kp LBKT &kp RBKT &kp UNDER   &trans &kp UNDER &kp EQUAL &trans &kp APOS &trans
- &trans &trans &kp LCTRL &kp LALT &kp M &trans            &trans &trans &trans &trans &trans &trans
+ &trans &kp 8 &trans &kp LBRC &kp RBRC &trans       &trans &trans &trans &trans &trans &trans
+ &kp LSHIFT &kp &kp GRAVE &kp LBKT &kp RBKT &kp UNDER   &trans &kp UNDER &kp EQUAL &kp PIPE &kp APOS &trans
+ &kp LCTRL  &kp LALT &kp M &trans &trans &trans            &trans &trans &trans &trans &trans &trans
                   &to DEFAULT &kp LPAR &kp RPAR            &trans &trans &to DEFAULT
                         >;
                 };
@@ -165,7 +165,7 @@ label = "SPEC";
                         bindings = <
  &trans &kp LG(LS(S)) &kp LC(W) &kp LC(Z) &kp LC(Y) &kp LC(T)   &kp LC(Y) &kp HOME &kp UP &kp END &trans &trans
  &kp LSHFT &kp LC(A) &kp LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &trans &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
- &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(LC(V))   &trans &trans &trans &trans &trans &trans
+ &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(LC(V))   &kp LC(B) &kp LC(U) &trans &trans &trans &trans
                       &to DEFAULT &trans &trans   &trans &kp LSHFT &to DEFAULT
                         >;
                 };
@@ -179,10 +179,10 @@ label = "CTRL";
 // |     |Undo|Cut|Copy|Paste|windows paste      |||||     |     |     |     |     |     |
 //                               |Esc|     |     |||||     |shift|     |
                         bindings = <
- &trans &kp LG(LS(S)) &kp LC(W) &kp LC(Z) &kp LC(Y) &kp LC(T)   &kp LC(Y) &kp HOME &kp UP &kp END &trans &kp TAB
+ &trans &kp LG(LS(S)) &kp LC(W) &kp LC(Z) &kp LC(Y) &kp LC(T)         &kp LC(Y) &kp HOME &kp UP &kp END &trans &kp TAB
  &kp LSHFT &kp LC(A) &kp LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &trans &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
- &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(V)   &trans &kp LEFT &trans &kp RIGHT &trans &trans
-                      &to DEFAULT &kp ESC &kp LC(BSPC)   &kp LC(RET) &kp LSHFT &to DEFAULT
+ &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(V)             &trans &kp LEFT &trans &kp RIGHT &trans &trans
+                      &to DEFAULT &kp DEL &kp LC(BSPC)   &kp LC(RET) &kp LSHFT &to DEFAULT
                         >;
                 };
 
