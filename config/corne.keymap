@@ -33,7 +33,7 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        kp_degree: kp_deg {
+        kp_deg: kp_deg {
             label = "kp_deg";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
