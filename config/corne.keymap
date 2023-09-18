@@ -199,8 +199,8 @@ label = "CTRL";
 //                               |return|     |     |||||     |shift|     |
                         bindings = <
  &trans &kp LG(LS(S)) &kp LC(W) &kp LC(Z) &kp LC(Y) &kp LC(T)         &kp LC(K) &kp HOME &kp UP &kp END &trans &kp TAB
- &kp LSHFT &kp LC(A) &kp LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &LC(B) &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
- &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(V)             &LC(U) &kp LEFT &trans &kp RIGHT &trans &trans
+ &kp LSHFT &kp LC(A) &kp LC(S) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F)  &kp LC(B) &kp LC(LEFT) &kp DOWN &kp LC(RIGHT)  &kp LC(RIGHT) &trans
+ &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(V)             &kp LC(U) &kp LEFT &trans &kp RIGHT &trans &trans
                       &to DEFAULT &kp DEL &kp LC(BSPC)   &kp LC(RET) &kp LSHFT &to DEFAULT
                         >;
                 };
