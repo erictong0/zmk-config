@@ -209,12 +209,12 @@ label = "CTRL";
                 clmk_layer {
 label = "QWRT";
 // -----------------------------------------------------------------------------------------
-// |     |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |     |
+// | ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |     |
 // |     |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  |     |
 // |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-   &trans &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P &trans
+   &kp ESC &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P &trans
    &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
    &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
                    &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
