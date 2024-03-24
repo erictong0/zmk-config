@@ -18,7 +18,7 @@
 #define SPEC   6
 #define CTRL    7
 #define QWRT   8
-#define STAR 9
+#define STARDEW 9
 #define NEW 10
 
 
@@ -117,7 +117,7 @@ label = "LAYER";
 //                   |     |     |     |||||     |     |     |
                         bindings = <
  &trans &kp TAB &trans &trans &trans &trans   &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &trans &trans &trans
- &trans &trans &to MEDIA &to SYM &to NUM &trans   &trans &to NUM &to SYM &to MEDIA &trans &to STAR
+ &trans &trans &to MEDIA &to SYM &to NUM &trans   &trans &to NUM &to SYM &to MEDIA &trans &to STARDEW
  &to CTRL &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to QWRT
                       &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
                         >;
