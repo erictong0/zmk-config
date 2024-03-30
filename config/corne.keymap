@@ -291,8 +291,8 @@ label = "STARDEW";
 //                   | ESC | ani |  1  |   |     |     |     |
                         bindings = <
    &kp F9    &kp TAB &kp N2 &kp W &kp E &kp Y     &kp T &trans &trans &kp Y &trans &kp LGUI
-   &kp LSHFT &kp N3  &kp A  &kp S &kp D &kp N9    &kp M &trans &trans &trans &trans &trans
-   &kp LCTRL &kp N4  &kp N5 &kp N6 &kp N7 &kp N8  &kp F &trans &trans &trans &trans &to DEFAULT
+   &kp LSHFT &kp N3  &kp A  &kp S &kp D &kp N8    &kp M &trans &trans &trans &trans &trans
+   &kp LCTRL &kp N4  &kp N5 &kp U &kp N6 &kp N7  &kp F &trans &trans &trans &trans &to DEFAULT
                    &kp ESC &ani_cancel &kp N1   &kp DEL &trans &trans
                         >;
                 };
