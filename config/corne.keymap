@@ -61,7 +61,7 @@
             bindings
                 = <&macro_press &kp LCTRL &kp LALT>
                 , <&macro_tap &kp M>
-                , <&macro_press &kp LCTRL &kp LALT>
+                , <&macro_release &kp LCTRL &kp LALT>
                 ;
         };
         ction_ve: ction_ve {
