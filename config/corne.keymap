@@ -64,6 +64,16 @@
                 , <&macro_release &kp LCTRL &kp LALT>
                 ;
         };
+        g_bullet: g_bullet {
+            label = "g_bullet";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHIFT>
+                , <&macro_tap &kp N8>
+                , <&macro_release &kp LCTRL &kp LSHIFT>
+                ;
+        };
         ction_ve: ction_ve {
             label = "ction_ve";
             compatible = "zmk,behavior-macro";
@@ -213,8 +223,8 @@ label = "SYMBOL";
 // |     |     |     |  -  |  —  |     |||||     |     |     |     |     |     |
 //                   |     |  (  |  )  |||||     |     |     |
                         bindings = <
- &trans &kp N8 &trans &kp LBRC &kp RBRC &trans          &trans &ction_ll &kp EQUAL &kp_dash &kp_deg &trans
- &kp LSHIFT &kp N7 &ction_re &ction_s &kp RBKT &trans   &ction_m &ction_nt  &kp UNDER &kp DQT &kp APOS &trans
+ &trans &kp LBRC &kp RBRC &kp LBKT &kp RBKT &trans          &trans &ction_ll &kp EQUAL &kp_dash &kp_deg &trans
+ &kp LSHIFT &g_bullet &ction_re &ction_s &trans &trans   &ction_m &ction_nt  &kp UNDER &kp DQT &kp APOS &trans
  &kp LCTRL  &g_comment &kp MINUS &kp_dash &ction_d &ction_ve    &trans &trans &trans &trans &trans &trans
                   &to DEFAULT &kp LPAR &kp RPAR            &trans &trans &to DEFAULT
                         >;
