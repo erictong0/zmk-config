@@ -19,6 +19,7 @@
 #define QWRT   7
 #define STARDEW 8
 #define NEW 9
+#define MINE 10
 
 
 
@@ -41,6 +42,16 @@
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N6>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        altTab: altTab {
+            label = "altTab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
                 , <&macro_release &kp LALT>
                 ;
         };
@@ -191,7 +202,7 @@ label = "LAYER";
 // |     |     |     |     |     |     |||||     |     |     |     |     |CLMK|
 //                   |     |     |     |||||     |     |     |
                         bindings = <
- &trans &kp TAB &trans &trans &trans &trans   &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &trans &trans &trans
+ &trans &kp TAB &trans &trans &trans &trans   &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &trans &trans &to MINE
  &trans &trans &to MEDIA &to SYM &to NUM &trans   &trans &to NUM &to SYM &to MEDIA &trans &to STARDEW
  &to CTRL &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &to QWRT
                       &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
@@ -288,7 +299,7 @@ label = "QWRT";
    &kp ESC &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P &trans
    &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
    &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
-                   &to DEFAULT &trans &trans   &trans &trans &to DEFAULT
+                   &to DEFAULT &kp SPACE &trans   &trans &trans &to DEFAULT
                         >;
                 };
 
@@ -318,7 +329,21 @@ label = "NEW";
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U      &kp Y  &kp SEMI &trans
    &kp LSHFT &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E      &kp I   &kp O &trans
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA  &kp DOT &kp FSLH &to DEFAULT
-              &to DEFAULT &trans &kp SPACE   &trans &trans &to DEFAULT
+              &to DEFAULT &kp SPACE &kp RET   &trans &trans &to DEFAULT
+                        >;
+                };
+                mine_layer {
+label = "MINE";
+// -----------------------------------------------------------------------------------------
+// | ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |     |
+// |     |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  |     |
+// |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
+//                   |     |     |     |   |     |     |     |
+                        bindings = <
+   &kp ESC &kp Q &kp Q &kp W &kp E &kp R   &kp Y &kp U  &kp I     &kp O   &kp P &trans
+   &kp LSHFT &kp A &kp A &kp S &kp D &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
+                   &kp ESC &kp SPACE &trans   &trans &trans &to DEFAULT
                         >;
                 };
         };
