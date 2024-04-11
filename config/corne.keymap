@@ -348,9 +348,9 @@ label = "MINE";
 // |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-   &kp ESC &kp 3 &kp Q &kp W &kp E &kp R   &t_chat &kp U  &kp I     &kp O   &kp P &trans
-   &kp LSHFT &kp 2 &kp A &kp S &kp D &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
-   &kp LCTRL &kp 1 &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
+   &kp ESC &kp N3 &kp Q &kp W &kp E &kp R   &t_chat &kp U  &kp I     &kp O   &kp P &trans
+   &kp LSHFT &kp N2 &kp A &kp S &kp D &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
+   &kp LCTRL &kp N1 &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
                    &kp ESC &kp SPACE &kp F   &trans &trans &to DEFAULT
                         >;
                 };
