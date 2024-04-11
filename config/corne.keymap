@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = = <&macro_tap &to DEFAULT &kp T>
+                = = <&macro_tap &to 0 &kp T>
                 ;
         };
         g_comment: g_comment {
