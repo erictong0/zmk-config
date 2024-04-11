@@ -65,6 +65,14 @@
                 , <&macro_release &kp DEL &kp RSHFT>
                 ;
         };
+        t_chat: t_chat {
+            label = "t_chat";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = = <&macro_tap &to DEFAULT &kp T>
+                ;
+        };
         g_comment: g_comment {
             label = "g_comment";
             compatible = "zmk,behavior-macro";
@@ -340,10 +348,10 @@ label = "MINE";
 // |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-   &kp ESC &kp Q &kp Q &kp W &kp E &kp R   &kp Y &kp U  &kp I     &kp O   &kp P &trans
-   &kp LSHFT &kp A &kp A &kp S &kp D &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
-                   &kp ESC &kp SPACE &trans   &trans &trans &to DEFAULT
+   &kp ESC &kp 3 &kp Q &kp W &kp E &kp R   &t_chat &kp U  &kp I     &kp O   &kp P &trans
+   &kp LSHFT &kp 2 &kp A &kp S &kp D &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
+   &kp LCTRL &kp 1 &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &to DEFAULT
+                   &kp ESC &kp SPACE &kp F   &trans &trans &to DEFAULT
                         >;
                 };
         };
